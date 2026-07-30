@@ -1,227 +1,91 @@
 // script.js
 
-// --------------------------------
-// GET ALL SCREENS
-// --------------------------------
+// Get all screens
+const screens = document.querySelectorAll(".screen");
 
-const screens =
-document.querySelectorAll(".screen");
-
-// --------------------------------
-// SHOW A SCREEN
-// --------------------------------
-
+// Show one screen and hide the others
 function showScreen(screenId) {
+screens.forEach((screen) => {
+screen.classList.remove("active");
+});
 
 ```
-screens.forEach(
-    function(screen) {
-
-        screen.classList
-            .remove("active");
-
-    }
-);
-
 document
     .getElementById(screenId)
-    .classList
-    .add("active");
+    .classList.add("active");
 ```
 
 }
 
-// --------------------------------
-// STORE DATE CHOICES
-// --------------------------------
-
+// Store selected date details
 let selectedDay = "";
 let selectedTime = "";
 let selectedCafe = "";
 
-// --------------------------------
-// WELCOME BUTTON
-// --------------------------------
-
+// Welcome screen
 document
 .getElementById("continue-button")
-.addEventListener(
-"click",
-function() {
+.addEventListener("click", () => {
+showScreen("question-screen");
+});
 
-```
-        showScreen(
-            "question-screen"
-        );
-
-    }
-);
-```
-
-// --------------------------------
-// YES BUTTON
-// --------------------------------
-
+// Yes button
 document
 .getElementById("yes-button")
-.addEventListener(
-"click",
-function() {
+.addEventListener("click", () => {
+showScreen("celebration-screen");
+createConfetti();
+});
 
-```
-        showScreen(
-            "celebration-screen"
-        );
-
-        createConfetti();
-
-    }
-);
-```
-
-// --------------------------------
-// MOVE THE NO BUTTON
-// --------------------------------
-
-const noButton =
-document.getElementById(
-"no-button"
-);
+// No button
+const noButton = document.getElementById("no-button");
 
 function moveNoButton() {
 
 ```
-const card =
-    document.querySelector(
-        ".card"
-    );
+const x =
+    Math.floor(Math.random() * 220) - 110;
 
-const cardWidth =
-    card.clientWidth;
+const y =
+    Math.floor(Math.random() * 160) - 80;
 
-const cardHeight =
-    card.clientHeight;
-
-const buttonWidth =
-    noButton.offsetWidth;
-
-const buttonHeight =
-    noButton.offsetHeight;
-
-
-// Random position inside card
-
-const randomX =
-    Math.random()
-    *
-    (
-        cardWidth
-        -
-        buttonWidth
-        -
-        50
-    )
-    -
-    (
-        cardWidth
-        /
-        2
-    )
-    +
-    80;
-
-
-const randomY =
-    Math.random()
-    *
-    180
-    -
-    90;
-
-
-noButton.style.position =
-    "relative";
-
-
-noButton.style.left =
-    randomX
-    +
-    "px";
-
-
-noButton.style.top =
-    randomY
-    +
-    "px";
+noButton.style.transform =
+    `translate(${x}px, ${y}px)`;
 ```
 
 }
 
-// Laptop / mouse
-
+// For laptop
 noButton.addEventListener(
 "mouseenter",
 moveNoButton
 );
 
-// Mobile / touch
-
+// For mobile
 noButton.addEventListener(
 "touchstart",
-function(event) {
-
-```
-    event.preventDefault();
-
-    moveNoButton();
-
+(event) => {
+event.preventDefault();
+moveNoButton();
 }
-```
-
 );
 
-// If clicked
-
-noButton.addEventListener(
-"click",
-moveNoButton
-);
-
-// --------------------------------
-// PLAN DATE BUTTON
-// --------------------------------
-
+// Plan date button
 document
 .getElementById("plan-button")
-.addEventListener(
-"click",
-function() {
+.addEventListener("click", () => {
+showScreen("day-screen");
+});
 
-```
-        showScreen(
-            "day-screen"
-        );
-
-    }
-);
-```
-
-// --------------------------------
-// SELECT DAY
-// --------------------------------
-
-const dayButtons =
-document.querySelectorAll(
-".day-choice"
-);
-
-dayButtons.forEach(
-function(button) {
+// Day selection
+document
+.querySelectorAll(".day-choice")
+.forEach((button) => {
 
 ```
     button.addEventListener(
         "click",
-        function() {
+        () => {
 
             selectedDay =
                 button.dataset.day;
@@ -233,27 +97,18 @@ function(button) {
         }
     );
 
-}
+});
 ```
 
-);
-
-// --------------------------------
-// SELECT TIME
-// --------------------------------
-
-const timeButtons =
-document.querySelectorAll(
-".time-choice"
-);
-
-timeButtons.forEach(
-function(button) {
+// Time selection
+document
+.querySelectorAll(".time-choice")
+.forEach((button) => {
 
 ```
     button.addEventListener(
         "click",
-        function() {
+        () => {
 
             selectedTime =
                 button.dataset.time;
@@ -265,34 +120,21 @@ function(button) {
         }
     );
 
-}
+});
 ```
 
-);
-
-// --------------------------------
-// SELECT CAFÉ
-// --------------------------------
-
-const cafeButtons =
-document.querySelectorAll(
-".cafe-choice"
-);
-
-cafeButtons.forEach(
-function(button) {
+// Café selection
+document
+.querySelectorAll(".cafe-choice")
+.forEach((button) => {
 
 ```
     button.addEventListener(
         "click",
-        function() {
+        () => {
 
             selectedCafe =
                 button.dataset.cafe;
-
-
-            // Add selections
-            // to final screen
 
             document
                 .getElementById(
@@ -301,14 +143,12 @@ function(button) {
                 .textContent =
                 selectedDay;
 
-
             document
                 .getElementById(
                     "final-time"
                 )
                 .textContent =
                 selectedTime;
-
 
             document
                 .getElementById(
@@ -317,51 +157,37 @@ function(button) {
                 .textContent =
                 selectedCafe;
 
-
             showScreen(
                 "final-screen"
             );
-
 
             createConfetti();
 
         }
     );
 
-}
+});
 ```
 
-);
-
-// --------------------------------
-// FINAL BUTTON
-// --------------------------------
-
+// Final button
 document
 .getElementById("final-button")
-.addEventListener(
-"click",
-function() {
+.addEventListener("click", () => {
 
 ```
-        document
-            .getElementById(
-                "final-response"
-            )
-            .textContent =
-            "Yay! I can't wait to see you ❤️☕🌹";
+    document
+        .getElementById(
+            "final-response"
+        )
+        .textContent =
+        "Yay! I can't wait to see you ❤️☕🌹";
 
+    createConfetti();
 
-        createConfetti();
-
-    }
-);
+});
 ```
 
-// --------------------------------
-// FLOATING HEARTS
-// --------------------------------
-
+// Floating hearts
 const heartContainer =
 document.getElementById(
 "heart-container"
@@ -371,16 +197,11 @@ function createHeart() {
 
 ```
 const heart =
-    document.createElement(
-        "div"
-    );
+    document.createElement("div");
 
+heart.classList.add("heart");
 
-heart.classList
-    .add("heart");
-
-
-const hearts = [
+const heartSymbols = [
     "❤️",
     "💕",
     "💗",
@@ -388,16 +209,14 @@ const hearts = [
     "✨"
 ];
 
-
 heart.textContent =
-    hearts[
+    heartSymbols[
         Math.floor(
             Math.random()
             *
-            hearts.length
+            heartSymbols.length
         )
     ];
-
 
 heart.style.left =
     Math.random()
@@ -405,7 +224,6 @@ heart.style.left =
     100
     +
     "vw";
-
 
 heart.style.fontSize =
     15
@@ -416,7 +234,6 @@ heart.style.fontSize =
     +
     "px";
 
-
 heart.style.animationDuration =
     5
     +
@@ -426,18 +243,13 @@ heart.style.animationDuration =
     +
     "s";
 
-
-heartContainer
-    .appendChild(
-        heart
-    );
-
+heartContainer.appendChild(
+    heart
+);
 
 setTimeout(
-    function() {
-
+    () => {
         heart.remove();
-
     },
     10000
 );
@@ -445,20 +257,25 @@ setTimeout(
 
 }
 
-// Create a heart regularly
-
+// Create a floating heart
+// every 700 milliseconds
 setInterval(
 createHeart,
 700
 );
 
-// --------------------------------
-// SIMPLE CONFETTI
-// --------------------------------
-
+// Confetti animation
 function createConfetti() {
 
 ```
+const symbols = [
+    "❤️",
+    "🌸",
+    "✨",
+    "💕",
+    "🌷"
+];
+
 for (
     let i = 0;
     i < 45;
@@ -470,26 +287,17 @@ for (
             "div"
         );
 
-
     confetti.textContent =
-        [
-            "❤️",
-            "🌸",
-            "✨",
-            "💕",
-            "🌷"
-        ][
+        symbols[
             Math.floor(
                 Math.random()
                 *
-                5
+                symbols.length
             )
         ];
 
-
     confetti.style.position =
         "fixed";
-
 
     confetti.style.left =
         Math.random()
@@ -498,10 +306,8 @@ for (
         +
         "vw";
 
-
     confetti.style.top =
         "-30px";
-
 
     confetti.style.fontSize =
         18
@@ -512,27 +318,21 @@ for (
         +
         "px";
 
-
     confetti.style.zIndex =
         "100";
-
 
     confetti.style.transition =
         "transform 2.5s ease-in, opacity 2.5s";
 
-
-    document.body
-        .appendChild(
-            confetti
-        );
-
+    document.body.appendChild(
+        confetti
+    );
 
     setTimeout(
-        function() {
+        () => {
 
             confetti.style.transform =
                 "translateY(110vh) rotate(720deg)";
-
 
             confetti.style.opacity =
                 "0";
@@ -541,12 +341,9 @@ for (
         50
     );
 
-
     setTimeout(
-        function() {
-
+        () => {
             confetti.remove();
-
         },
         3000
     );
