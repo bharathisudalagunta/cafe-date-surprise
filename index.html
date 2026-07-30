@@ -1,245 +1,639 @@
-<!-- index.html -->
-
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>A Little Surprise for You ❤️</title>
+    <title>A Little Surprise ❤️</title>
 
-<!-- Google Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
-<link
-    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
->
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
-<!-- CSS file -->
-<link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
 
 </head>
 
+
 <body>
 
+    <!-- Decorative hearts -->
 
-<!-- Floating hearts background -->
-<div id="heart-container"></div>
+    <div id="heart-container"></div>
 
-<!-- Main card -->
-<main class="card">
 
-    <!-- SCREEN 1: Welcome -->
-    <section class="screen active" id="welcome-screen">
+    <!-- Main card -->
 
-        <div class="flower">🌷</div>
+    <main class="card">
 
-        <p class="small-text">Hey, my favorite person ❤️</p>
 
-        <h1>A little surprise<br>just for you...</h1>
+        <!-- SCREEN 1 -->
 
-        <p class="description">
-            I have something special to ask you ☺️
-        </p>
+        <section
+            class="screen active"
+            id="welcome-screen"
+        >
 
-        <button class="main-button" id="continue-button">
-            Open the surprise ✨
-        </button>
+            <div class="big-emoji">
+                ☕🌹
+            </div>
 
-    </section>
-
-
-    <!-- SCREEN 2: Main question -->
-    <section class="screen" id="question-screen">
-
-        <div class="coffee">☕</div>
-
-        <p class="small-text">Important question...</p>
-
-        <h1>Will you go on a café date with me this weekend? ❤️</h1>
-
-        <p class="description">
-            There will be coffee, good conversations,
-            and lots of happy moments ☕🌹
-        </p>
-
-        <div class="answer-buttons">
-
-            <button class="yes-button" id="yes-button">
-                Yes, absolutely! 💕
-            </button>
-
-            <button class="no-button" id="no-button">
-                No 🙈
-            </button>
-
-        </div>
-
-        <p class="tiny-text">
-            Choose carefully... one button is a little shy 😌
-        </p>
-
-    </section>
-
-
-    <!-- SCREEN 3: Celebration -->
-    <section class="screen" id="celebration-screen">
-
-        <div class="celebration-emoji">🎉</div>
-
-        <h1>YAYYYYY! 💖</h1>
-
-        <p class="celebration-message">
-            I knew you would say yes! 😌☕
-        </p>
-
-        <p class="description">
-            Now let's plan our little café date 🌷
-        </p>
-
-        <button class="main-button" id="plan-button">
-            Plan our date 💕
-        </button>
-
-    </section>
-
-
-    <!-- SCREEN 4: Choose day -->
-    <section class="screen" id="day-screen">
-
-        <div class="calendar">📅</div>
-
-        <p class="small-text">Step 1 of 3</p>
-
-        <h1>Which day should we go?</h1>
-
-        <div class="choice-container">
-
-            <button class="choice-button day-choice" data-day="Saturday">
-                Saturday ☀️
-            </button>
-
-            <button class="choice-button day-choice" data-day="Sunday">
-                Sunday 🌷
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- SCREEN 5: Choose time -->
-    <section class="screen" id="time-screen">
-
-        <div class="clock">⏰</div>
-
-        <p class="small-text">Step 2 of 3</p>
-
-        <h1>What time sounds perfect?</h1>
-
-        <div class="choice-container">
-
-            <button class="choice-button time-choice"
-                    data-time="Morning coffee">
-                Morning coffee ☀️
-            </button>
-
-            <button class="choice-button time-choice"
-                    data-time="Afternoon café">
-                Afternoon café ☕
-            </button>
-
-            <button class="choice-button time-choice"
-                    data-time="Evening dessert">
-                Evening dessert 🌙
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- SCREEN 6: Choose café -->
-    <section class="screen" id="cafe-screen">
-
-        <div class="cafe-emoji">🌹☕</div>
-
-        <p class="small-text">Step 3 of 3</p>
-
-        <h1>Where should we go?</h1>
-
-        <div class="choice-container">
-
-            <!-- Change these café names later -->
-            <button class="choice-button cafe-choice"
-                    data-cafe="Café Number One">
-                Café Number One ☕
-            </button>
-
-            <button class="choice-button cafe-choice"
-                    data-cafe="Café Number Two">
-                Café Number Two 🌷
-            </button>
-
-            <button class="choice-button cafe-choice"
-                    data-cafe="A surprise café">
-                Surprise me 😌✨
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- SCREEN 7: Final result -->
-    <section class="screen" id="final-screen">
-
-        <div class="bouquet">💐</div>
-
-        <p class="small-text">Our date is officially planned!</p>
-
-        <h1>It's a date! ❤️</h1>
-
-        <div class="date-summary">
-
-            <p>
-                📅 <strong id="final-day"></strong>
+            <p class="small-text">
+                HEY, MY FAVORITE PERSON
             </p>
 
-            <p>
-                ⏰ <strong id="final-time"></strong>
+            <h1>
+                I have a little surprise for you ❤️
+            </h1>
+
+            <p class="description">
+
+                I’m so lucky that our paths crossed.
+
+                <br><br>
+
+                You make ordinary moments feel special,
+                and I would love to create another
+                beautiful memory with you. ✨
+
             </p>
 
-            <p>
-                ☕ <strong id="final-cafe"></strong>
+            <button
+                class="main-button"
+                id="continue-button"
+            >
+
+                Open the surprise ✨
+
+            </button>
+
+            <p class="tiny-text">
+
+                A small invitation,
+                made especially for you 💌
+
             </p>
 
-        </div>
-
-        <p class="final-message">
-            I'm already looking forward to spending
-            this special time with you 🌹❤️
-        </p>
-
-        <button class="main-button" id="final-button">
-            I'll be there ❤️
-        </button>
-
-        <p class="tiny-text" id="final-response"></p>
-
-    </section>
-
-</main>
+        </section>
 
 
-<!-- JavaScript file -->
-<script src="script.js"></script>
 
+        <!-- SCREEN 2 -->
+
+        <section
+            class="screen"
+            id="question-screen"
+        >
+
+            <div class="big-emoji">
+                ☕💐
+            </div>
+
+            <p class="small-text">
+                A VERY IMPORTANT QUESTION
+            </p>
+
+            <h1>
+                Will you go on a café date with me? ❤️
+            </h1>
+
+            <p class="description">
+
+                Good coffee, lovely conversations,
+                and the best company—
+                what more could we ask for? ☕✨
+
+            </p>
+
+            <div class="answer-buttons">
+
+                <button
+                    class="yes-button"
+                    id="yes-button"
+                >
+
+                    Yes, absolutely! 💖
+
+                </button>
+
+
+                <button
+                    class="no-button"
+                    id="no-button"
+                >
+
+                    No 🙈
+
+                </button>
+
+            </div>
+
+            <p class="tiny-text">
+
+                P.S. The “No” button is a little shy 😄
+
+            </p>
+
+        </section>
+
+
+
+        <!-- SCREEN 3 -->
+
+        <section
+            class="screen"
+            id="celebration-screen"
+        >
+
+            <div class="big-emoji">
+                🎉🌹
+            </div>
+
+            <p class="small-text">
+                YAY!
+            </p>
+
+            <h1>
+                You just made me so happy! 🥰
+            </h1>
+
+            <p class="description">
+
+                I’m already looking forward
+                to spending time with you.
+
+                <br><br>
+
+                Let’s plan our little café date! ☕🌷
+
+            </p>
+
+            <button
+                class="main-button"
+                id="plan-button"
+            >
+
+                Let’s plan our date 💌
+
+            </button>
+
+        </section>
+
+
+
+        <!-- SCREEN 4 -->
+
+        <section
+            class="screen"
+            id="day-screen"
+        >
+
+            <div class="big-emoji">
+                📅🌸
+            </div>
+
+            <p class="small-text">
+                STEP 1 OF 3
+            </p>
+
+            <h1>
+                Which day works for you?
+            </h1>
+
+            <p class="description">
+
+                Any day with you
+                already sounds like a good day. 💕
+
+            </p>
+
+            <div class="choice-container">
+
+                <button
+                    class="choice-button day-choice"
+                    data-day="Friday"
+                >
+
+                    Friday 🌸
+
+                </button>
+
+
+                <button
+                    class="choice-button day-choice"
+                    data-day="Saturday"
+                >
+
+                    Saturday 🌻
+
+                </button>
+
+
+                <button
+                    class="choice-button day-choice"
+                    data-day="Sunday"
+                >
+
+                    Sunday 🌷
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SCREEN 5 -->
+
+        <section
+            class="screen"
+            id="time-screen"
+        >
+
+            <div class="big-emoji">
+                🕰️☕
+            </div>
+
+            <p class="small-text">
+                STEP 2 OF 3
+            </p>
+
+            <h1>
+                What time suits you best?
+            </h1>
+
+            <p class="description">
+
+                The best time is the time
+                we get to spend together. ❤️
+
+            </p>
+
+            <div class="choice-container">
+
+                <button
+                    class="choice-button time-choice"
+                    data-time="11:00 AM"
+                >
+
+                    11:00 AM ☀️
+
+                </button>
+
+
+                <button
+                    class="choice-button time-choice"
+                    data-time="3:00 PM"
+                >
+
+                    3:00 PM 🌤️
+
+                </button>
+
+
+                <button
+                    class="choice-button time-choice"
+                    data-time="6:00 PM"
+                >
+
+                    6:00 PM 🌆
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SCREEN 6 -->
+
+        <section
+            class="screen"
+            id="cafe-screen"
+        >
+
+            <div class="big-emoji">
+                ☕🌹
+            </div>
+
+            <p class="small-text">
+                STEP 3 OF 3
+            </p>
+
+            <h1>
+                Which café should we visit?
+            </h1>
+
+            <p class="description">
+
+                Take a look at the cafés,
+                and choose the one you like most. 💕
+
+            </p>
+
+
+            <div class="cafe-container">
+
+
+                <!-- CAMOMILA -->
+
+                <div class="cafe-card">
+
+                    <h2>
+                        Camomila 🌼
+                    </h2>
+
+                    <p>
+
+                        Cozy, calm,
+                        and perfect for
+                        good conversations.
+
+                    </p>
+
+                    <a
+                        href="https://maps.app.goo.gl/BeY8w2m3QzyZNjJv7?g_st=ac"
+                        target="_blank"
+                        rel="noopener"
+                    >
+
+                        View on Google Maps 📍
+
+                    </a>
+
+                    <button
+                        class="choose-cafe cafe-choice"
+                        data-cafe="Camomila"
+                    >
+
+                        Choose Camomila
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- LA RESISTANCE -->
+
+                <div class="cafe-card">
+
+                    <h2>
+                        La Resistance 🥐
+                    </h2>
+
+                    <p>
+
+                        Fresh bakery treats
+                        and a warm,
+                        charming atmosphere.
+
+                    </p>
+
+                    <a
+                        href="https://maps.app.goo.gl/7qbGnyscJ1V3wHrU9"
+                        target="_blank"
+                        rel="noopener"
+                    >
+
+                        View on Google Maps 📍
+
+                    </a>
+
+                    <button
+                        class="choose-cafe cafe-choice"
+                        data-cafe="La Resistance Boulangerie"
+                    >
+
+                        Choose La Resistance
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- LA CROISSANT -->
+
+                <div class="cafe-card">
+
+                    <h2>
+                        La Croissant 🥐
+                    </h2>
+
+                    <p>
+
+                        A lovely café
+                        for coffee,
+                        pastries, and memories.
+
+                    </p>
+
+                    <a
+                        href="https://maps.app.goo.gl/QT8DDLsuNnMSbmob8"
+                        target="_blank"
+                        rel="noopener"
+                    >
+
+                        View on Google Maps 📍
+
+                    </a>
+
+                    <button
+                        class="choose-cafe cafe-choice"
+                        data-cafe="La Croissant"
+                    >
+
+                        Choose La Croissant
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FINAL SCREEN -->
+
+        <section
+            class="screen"
+            id="final-screen"
+        >
+
+            <div class="final-layout">
+
+
+                <div class="final-text">
+
+                    <p class="small-text">
+                        OUR LITTLE DATE
+                    </p>
+
+                    <h1>
+                        It’s a date! 💕
+                    </h1>
+
+
+                    <div class="date-summary">
+
+                        <p>
+
+                            📅 Day:
+
+                            <strong
+                                id="final-day"
+                            ></strong>
+
+                        </p>
+
+                        <p>
+
+                            🕰️ Time:
+
+                            <strong
+                                id="final-time"
+                            ></strong>
+
+                        </p>
+
+                        <p>
+
+                            ☕ Café:
+
+                            <strong
+                                id="final-cafe"
+                            ></strong>
+
+                        </p>
+
+                    </div>
+
+
+                    <p class="final-message">
+
+                        I’m really happy
+                        that I get to make
+                        another beautiful memory
+                        with you.
+
+                        <br><br>
+
+                        Thank you for being
+                        someone who makes
+                        my days brighter. ❤️
+
+                        <br><br>
+
+                        I can’t wait for
+                        our café date! ☕🌹
+
+                    </p>
+
+
+                    <button
+                        class="main-button"
+                        id="final-button"
+                    >
+
+                        I can’t wait! 💖
+
+                    </button>
+
+
+                    <p
+                        class="final-response"
+                        id="final-response"
+                    ></p>
+
+                </div>
+
+
+                <!-- Cute anime illustration -->
+
+                <div class="anime-picture">
+
+                    <div class="night-sky">
+
+                        ✨ 🌙 ✨
+
+                    </div>
+
+                    <div class="cafe-sign">
+
+                        CAFÉ DATE
+
+                    </div>
+
+                    <div class="anime-couple">
+
+                        <div class="anime-boy">
+
+                            <div class="boy-head"></div>
+
+                            <div class="boy-body"></div>
+
+                        </div>
+
+
+                        <div class="anime-girl">
+
+                            <div class="girl-head"></div>
+
+                            <div class="girl-dress"></div>
+
+                            <div class="girl-leg"></div>
+
+                        </div>
+
+                    </div>
+
+                    <p>
+
+                        A cute little date,
+                        with my favorite person ❤️
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <script src="./script.js"></script>
 
 </body>
+
 </html>
