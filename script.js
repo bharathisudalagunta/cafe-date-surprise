@@ -1,5 +1,5 @@
-// script.js
 alert("JavaScript is working! ❤️");
+
 // Get all screens
 const screens = document.querySelectorAll(".screen");
 
@@ -9,11 +9,9 @@ screens.forEach((screen) => {
 screen.classList.remove("active");
 });
 
-```
 document
     .getElementById(screenId)
     .classList.add("active");
-```
 
 }
 
@@ -41,17 +39,13 @@ createConfetti();
 const noButton = document.getElementById("no-button");
 
 function moveNoButton() {
+const x = Math.floor(Math.random() * 220) - 110;
+const y = Math.floor(Math.random() * 160) - 80;
 
-```
-const x =
-    Math.floor(Math.random() * 220) - 110;
-
-const y =
-    Math.floor(Math.random() * 160) - 80;
 
 noButton.style.transform =
-    `translate(${x}px, ${y}px)`;
-```
+    "translate(" + x + "px, " + y + "px)";
+
 
 }
 
@@ -81,123 +75,79 @@ showScreen("day-screen");
 document
 .querySelectorAll(".day-choice")
 .forEach((button) => {
-
-```
-    button.addEventListener(
-        "click",
-        () => {
-
-            selectedDay =
-                button.dataset.day;
-
-            showScreen(
-                "time-screen"
-            );
-
-        }
-    );
-
+button.addEventListener(
+"click",
+() => {
+selectedDay = button.dataset.day;
+showScreen("time-screen");
+}
+);
 });
-```
 
 // Time selection
 document
 .querySelectorAll(".time-choice")
 .forEach((button) => {
-
-```
-    button.addEventListener(
-        "click",
-        () => {
-
-            selectedTime =
-                button.dataset.time;
-
-            showScreen(
-                "cafe-screen"
-            );
-
-        }
-    );
-
+button.addEventListener(
+"click",
+() => {
+selectedTime = button.dataset.time;
+showScreen("cafe-screen");
+}
+);
 });
-```
 
 // Café selection
 document
 .querySelectorAll(".cafe-choice")
 .forEach((button) => {
+button.addEventListener(
+"click",
+() => {
+selectedCafe = button.dataset.cafe;
 
-```
-    button.addEventListener(
-        "click",
-        () => {
-
-            selectedCafe =
-                button.dataset.cafe;
 
             document
-                .getElementById(
-                    "final-day"
-                )
-                .textContent =
-                selectedDay;
+                .getElementById("final-day")
+                .textContent = selectedDay;
 
             document
-                .getElementById(
-                    "final-time"
-                )
-                .textContent =
-                selectedTime;
+                .getElementById("final-time")
+                .textContent = selectedTime;
 
             document
-                .getElementById(
-                    "final-cafe"
-                )
-                .textContent =
-                selectedCafe;
+                .getElementById("final-cafe")
+                .textContent = selectedCafe;
 
-            showScreen(
-                "final-screen"
-            );
-
+            showScreen("final-screen");
             createConfetti();
-
         }
     );
-
 });
-```
+
 
 // Final button
 document
 .getElementById("final-button")
 .addEventListener("click", () => {
+document
+.getElementById("final-response")
+.textContent =
+"Yay! I can't wait to see you ❤️☕🌹";
 
-```
-    document
-        .getElementById(
-            "final-response"
-        )
-        .textContent =
-        "Yay! I can't wait to see you ❤️☕🌹";
 
     createConfetti();
-
 });
-```
+
 
 // Floating hearts
 const heartContainer =
-document.getElementById(
-"heart-container"
-);
+document.getElementById("heart-container");
 
 function createHeart() {
-
-```
 const heart =
-    document.createElement("div");
+document.createElement("div");
+
 
 heart.classList.add("heart");
 
@@ -212,48 +162,30 @@ const heartSymbols = [
 heart.textContent =
     heartSymbols[
         Math.floor(
-            Math.random()
-            *
+            Math.random() *
             heartSymbols.length
         )
     ];
 
 heart.style.left =
-    Math.random()
-    *
-    100
-    +
-    "vw";
+    Math.random() * 100 + "vw";
 
 heart.style.fontSize =
-    15
-    +
-    Math.random()
-    *
-    25
-    +
+    15 +
+    Math.random() * 25 +
     "px";
 
 heart.style.animationDuration =
-    5
-    +
-    Math.random()
-    *
-    5
-    +
+    5 +
+    Math.random() * 5 +
     "s";
 
-heartContainer.appendChild(
-    heart
-);
+heartContainer.appendChild(heart);
 
-setTimeout(
-    () => {
-        heart.remove();
-    },
-    10000
-);
-```
+setTimeout(() => {
+    heart.remove();
+}, 10000);
+
 
 }
 
@@ -266,32 +198,23 @@ createHeart,
 
 // Confetti animation
 function createConfetti() {
-
-```
 const symbols = [
-    "❤️",
-    "🌸",
-    "✨",
-    "💕",
-    "🌷"
+"❤️",
+"🌸",
+"✨",
+"💕",
+"🌷"
 ];
 
-for (
-    let i = 0;
-    i < 45;
-    i++
-) {
 
+for (let i = 0; i < 45; i++) {
     const confetti =
-        document.createElement(
-            "div"
-        );
+        document.createElement("div");
 
     confetti.textContent =
         symbols[
             Math.floor(
-                Math.random()
-                *
+                Math.random() *
                 symbols.length
             )
         ];
@@ -300,22 +223,17 @@ for (
         "fixed";
 
     confetti.style.left =
-        Math.random()
-        *
-        100
-        +
+        Math.random() *
+        100 +
         "vw";
 
     confetti.style.top =
         "-30px";
 
     confetti.style.fontSize =
-        18
-        +
-        Math.random()
-        *
-        18
-        +
+        18 +
+        Math.random() *
+        18 +
         "px";
 
     confetti.style.zIndex =
@@ -328,27 +246,18 @@ for (
         confetti
     );
 
-    setTimeout(
-        () => {
+    setTimeout(() => {
+        confetti.style.transform =
+            "translateY(110vh) rotate(720deg)";
 
-            confetti.style.transform =
-                "translateY(110vh) rotate(720deg)";
+        confetti.style.opacity =
+            "0";
+    }, 50);
 
-            confetti.style.opacity =
-                "0";
-
-        },
-        50
-    );
-
-    setTimeout(
-        () => {
-            confetti.remove();
-        },
-        3000
-    );
-
+    setTimeout(() => {
+        confetti.remove();
+    }, 3000);
 }
-```
+
 
 }
