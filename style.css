@@ -615,6 +615,12 @@ button {
             75,
             0.22
         );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
 }
 
 
@@ -625,9 +631,11 @@ button {
 
     display: block;
 
-    object-fit: cover;
+    object-fit: contain;
 
     object-position: center;
+
+    background: #f4d5dc;
 }
 
 
@@ -890,10 +898,10 @@ button {
     }
 
 
-    /* FINAL IMAGE IS VISIBLE ON MOBILE */
+    /* FULL IMAGE ON MOBILE */
 
     .anime-picture {
-        display: block;
+        display: flex;
 
         width: 100%;
 
@@ -902,6 +910,21 @@ button {
         margin-top: 5px;
 
         border-radius: 20px;
+
+        justify-content: center;
+
+        align-items: center;
+    }
+
+
+    .anime-image {
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: contain;
+
+        object-position: center;
     }
 
 
