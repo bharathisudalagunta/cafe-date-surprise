@@ -1,5 +1,5 @@
 // script.js
-
+alert("JavaScript is working! ❤️");
 // Get all screens
 const screens = document.querySelectorAll(".screen");
 
