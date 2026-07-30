@@ -1,708 +1,1104 @@
-/* style.css */
-
-/* ------------------------------
-GENERAL SETTINGS
--------------------------------- */
-
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  }
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+
+html,
 body {
-min-height: 100vh;
-
-
-display: flex;
-justify-content: center;
-align-items: center;
-
-padding: 20px;
-
-overflow-x: hidden;
-
-font-family: "Poppins", sans-serif;
-
-background:
-    linear-gradient(
-        135deg,
-        #ffe4ec,
-        #fff4f7,
-        #f9d8e2
-    );
-
-
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
-
-/* ------------------------------
-MAIN CARD
--------------------------------- */
-
-.card {
-position: relative;
-
-
-width: 100%;
-max-width: 600px;
-
-min-height: 620px;
-
-padding: 45px 30px;
-
-border-radius: 35px;
-
-background:
-    rgba(255, 255, 255, 0.82);
-
-box-shadow:
-    0 20px 60px
-    rgba(150, 50, 80, 0.18);
-
-backdrop-filter:
-    blur(12px);
-
-overflow: hidden;
-
-z-index: 2;
-
-
-}
-
-/* ------------------------------
-SCREENS
--------------------------------- */
-
-.screen {
-display: none;
-
-
-min-height: 530px;
-
-flex-direction: column;
-
-justify-content: center;
-align-items: center;
-
-text-align: center;
-
-animation:
-    fadeIn 0.6s ease;
-
-
-}
-
-.screen.active {
-display: flex;
-}
-
-@keyframes fadeIn {
-
-
-from {
-    opacity: 0;
-    transform: translateY(15px);
-}
-
-to {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-}
-
-/* ------------------------------
-TEXT
--------------------------------- */
-
-h1 {
-
-
-margin:
-    15px 0;
-
-color:
-    #8f3150;
-
-font-family:
-    "Great Vibes",
-    cursive;
-
-font-size:
-    clamp(
-        2.7rem,
-        8vw,
-        4.8rem
-    );
-
-line-height:
-    1.15;
-
-font-weight:
-    400;
-
-
-}
-
-.small-text {
-
-
-color:
-    #bd607d;
-
-font-size:
-    0.95rem;
-
-font-weight:
-    600;
-
-letter-spacing:
-    1px;
-
-
-}
-
-.description {
-
-
-max-width:
-    440px;
-
-margin:
-    10px 0 28px;
-
-color:
-    #6f5360;
-
-line-height:
-    1.7;
-
-
-}
-
-.tiny-text {
-
-
-margin-top:
-    20px;
-
-color:
-    #a47b88;
-
-font-size:
-    0.8rem;
-
-
-}
-
-/* ------------------------------
-EMOJIS
--------------------------------- */
-
-.flower,
-.coffee,
-.celebration-emoji,
-.calendar,
-.clock,
-.cafe-emoji,
-.bouquet {
-
-
-font-size:
-    4.8rem;
-
-animation:
-    floatEmoji
-    2.5s
-    ease-in-out
-    infinite;
-
-
-}
-
-@keyframes floatEmoji {
-
-
-0%,
-100% {
-    transform:
-        translateY(0);
-}
-
-50% {
-    transform:
-        translateY(-12px);
-}
-
-
-}
-
-/* ------------------------------
-MAIN BUTTON
--------------------------------- */
-
-.main-button {
-
-
-border:
-    none;
-
-border-radius:
-    50px;
-
-padding:
-    15px 30px;
-
-color:
-    white;
-
-background:
-    linear-gradient(
-        135deg,
-        #d84d76,
-        #a92f52
-    );
-
-font-family:
-    "Poppins",
-    sans-serif;
-
-font-size:
-    1rem;
-
-font-weight:
-    600;
-
-cursor:
-    pointer;
-
-box-shadow:
-    0 10px 25px
-    rgba(
-        170,
-        40,
-        80,
-        0.25
-    );
-
-transition:
-    transform
-    0.2s ease;
-
-
-}
-
-.main-button:hover {
-
-
-transform:
-    translateY(-3px)
-    scale(1.03);
-
-
-}
-
-/* ------------------------------
-YES / NO BUTTONS
--------------------------------- */
-
-.answer-buttons {
-
-
-position:
-    relative;
-
-display:
-    flex;
-
-justify-content:
-    center;
-
-align-items:
-    center;
-
-gap:
-    18px;
-
-width:
-    100%;
-
-min-height:
-    80px;
-
-
-}
-
-.yes-button,
-.no-button {
-
-
-border:
-    none;
-
-border-radius:
-    50px;
-
-padding:
-    15px 22px;
-
-font-family:
-    "Poppins",
-    sans-serif;
-
-font-size:
-    0.95rem;
-
-font-weight:
-    600;
-
-cursor:
-    pointer;
-
-
-}
-
-.yes-button {
-
-
-color:
-    white;
-
-background:
-    #d84d76;
-
-box-shadow:
-    0 8px 20px
-    rgba(
-        216,
-        77,
-        118,
-        0.3
-    );
-
-
-}
-
-.no-button {
-
-
-position:
-    relative;
-
-color:
-    #81515f;
-
-background:
-    #f4dfe5;
-
-transition:
-    left
-    0.25s ease,
-    top
-    0.25s ease;
-
-
-}
-
-/* ------------------------------
-CHOICE BUTTONS
--------------------------------- */
-
-.choice-container {
-
-
-display:
-    grid;
-
-gap:
-    15px;
-
-width:
-    100%;
-
-max-width:
-    390px;
-
-margin-top:
-    20px;
-
-
-}
-
-.choice-button {
-
-
-width:
-    100%;
-
-padding:
-    17px;
-
-border:
-    2px solid
-    #f0b9c8;
-
-border-radius:
-    18px;
-
-color:
-    #7c3d52;
-
-background:
-    #fff7f9;
-
-font-family:
-    "Poppins",
-    sans-serif;
-
-font-size:
-    1rem;
-
-font-weight:
-    600;
-
-cursor:
-    pointer;
-
-transition:
-    all
-    0.2s ease;
-
-
-}
-
-.choice-button:hover {
-
-
-transform:
-    translateY(-3px);
-
-color:
-    white;
-
-background:
-    #d84d76;
-
-border-color:
-    #d84d76;
-
-
-}
-
-/* ------------------------------
-CELEBRATION
--------------------------------- */
-
-.celebration-message {
-
-
-color:
-    #c14367;
-
-font-size:
-    1.3rem;
-
-font-weight:
-    600;
-
-margin:
-    10px 0;
-
-
-}
-
-/* ------------------------------
-FINAL SCREEN
--------------------------------- */
-
-.date-summary {
-
-
-width:
-    100%;
-
-max-width:
-    380px;
-
-margin:
-    15px 0 25px;
-
-padding:
-    20px;
-
-border-radius:
-    20px;
-
-background:
-    #fff0f4;
-
-
-}
-
-.date-summary p {
-
-
-margin:
-    10px 0;
-
-color:
-    #713a4b;
-
-
-}
-
-.final-message {
-
-
-max-width:
-    430px;
-
-margin-bottom:
-    25px;
-
-color:
-    #74515d;
-
-line-height:
-    1.7;
-
-
-}
-
-/* ------------------------------
-FLOATING HEARTS
--------------------------------- */
-
-.heart {
-
-
-position:
-    fixed;
-
-bottom:
-    -50px;
-
-pointer-events:
-    none;
-
-animation:
-    floatHeart
-    linear
-    forwards;
-
-z-index:
-    1;
-
-
-}
-
-@keyframes floatHeart {
-
-
-from {
-
-    transform:
-        translateY(0)
-        rotate(0deg);
-
-    opacity:
-        0;
-
-}
-
-
-10% {
-
-    opacity:
-        0.8;
-
-}
-
-
-to {
-
-    transform:
-        translateY(-115vh)
-        rotate(360deg);
-
-    opacity:
-        0;
-
-}
-
-
-}
-
-/* ------------------------------
-MOBILE
--------------------------------- */
-
-@media
-(max-width: 500px) {
 
 
 body {
+    font-family:
+        "Poppins",
+        sans-serif;
 
-    padding:
-        12px;
+    background:
+        linear-gradient(
+            135deg,
+            #ffe4ec,
+            #fff8fa,
+            #f7d7e1
+        );
 
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 12px;
+
+    position: fixed;
+
+    inset: 0;
 }
 
 
+/* MAIN CARD */
+
 .card {
+    width: min(
+        950px,
+        100%
+    );
 
-    min-height:
-        600px;
+    height: min(
+        720px,
+        calc(100vh - 24px)
+    );
 
-    padding:
-        35px 20px;
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.90
+        );
+
+    border:
+        2px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.8
+        );
 
     border-radius:
+        32px;
+
+    box-shadow:
+        0 20px 70px
+        rgba(
+            140,
+            50,
+            80,
+            0.20
+        );
+
+    padding:
         28px;
 
+    overflow:
+        hidden;
+
+    position:
+        relative;
+
+    z-index:
+        5;
 }
 
+
+/* SCREENS */
 
 .screen {
+    display:
+        none;
 
-    min-height:
-        520px;
+    width:
+        100%;
 
-}
-
-
-.answer-buttons {
+    height:
+        100%;
 
     flex-direction:
         column;
 
-    gap:
-        12px;
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+
+    overflow-y:
+        auto;
+
+    padding:
+        10px;
+}
+
+
+.screen.active {
+    display:
+        flex;
+
+    animation:
+        fadeIn
+        0.5s
+        ease;
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(
+                10px
+            );
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(
+                0
+            );
+    }
 
 }
 
+
+/* TEXT */
 
 h1 {
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    color:
+        #9b3154;
 
     font-size:
-        3.1rem;
+        clamp(
+            2.8rem,
+            6vw,
+            4.8rem
+        );
+
+    font-weight:
+        400;
+
+    line-height:
+        1.05;
+
+    margin:
+        12px 0;
+}
+
+
+h2 {
+    color:
+        #87384f;
+
+    font-size:
+        1.05rem;
+
+    margin-bottom:
+        7px;
+}
+
+
+.small-text {
+    color:
+        #c35c7b;
+
+    font-size:
+        0.78rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1.4px;
+}
+
+
+.description {
+    max-width:
+        600px;
+
+    color:
+        #72525d;
+
+    line-height:
+        1.65;
+
+    margin:
+        10px 0 23px;
+
+    font-size:
+        0.95rem;
+}
+
+
+.tiny-text {
+    color:
+        #ad7787;
+
+    font-size:
+        0.75rem;
+
+    margin-top:
+        14px;
+}
+
+
+/* EMOJI */
+
+.big-emoji {
+    font-size:
+        4.2rem;
+
+    animation:
+        floatEmoji
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes floatEmoji {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-7px);
+    }
 
 }
 
 
-.flower,
-.coffee,
-.celebration-emoji,
-.calendar,
-.clock,
-.cafe-emoji,
-.bouquet {
+/* BUTTONS */
+
+button {
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    cursor:
+        pointer;
+}
+
+
+.main-button {
+    border:
+        none;
+
+    color:
+        white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #df4f79,
+            #aa294f
+        );
+
+    border-radius:
+        50px;
+
+    padding:
+        14px 29px;
 
     font-size:
-        4rem;
+        0.95rem;
+
+    font-weight:
+        700;
+
+    box-shadow:
+        0 10px 25px
+        rgba(
+            170,
+            40,
+            80,
+            0.25
+        );
+
+    transition:
+        0.2s;
+}
+
+
+.main-button:hover {
+    transform:
+        translateY(-2px)
+        scale(1.03);
+}
+
+
+/* YES AND NO */
+
+.answer-buttons {
+    width:
+        100%;
+
+    min-height:
+        110px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        22px;
+
+    position:
+        relative;
+}
+
+
+.yes-button,
+.no-button {
+    border:
+        none;
+
+    border-radius:
+        50px;
+
+    padding:
+        14px 23px;
+
+    font-size:
+        0.93rem;
+
+    font-weight:
+        700;
+}
+
+
+.yes-button {
+    color:
+        white;
+
+    background:
+        #d84d76;
+}
+
+
+.no-button {
+    color:
+        #7d4b5a;
+
+    background:
+        #f3dfe5;
+
+    position:
+        relative;
+
+    transition:
+        transform
+        0.22s
+        ease;
+}
+
+
+/* DAY AND TIME */
+
+.choice-container {
+    width:
+        min(
+            500px,
+            100%
+        );
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap:
+        12px;
+}
+
+
+.choice-button {
+    border:
+        2px solid
+        #efbdca;
+
+    border-radius:
+        18px;
+
+    padding:
+        15px 8px;
+
+    color:
+        #823d53;
+
+    background:
+        #fff8fa;
+
+    font-size:
+        0.86rem;
+
+    font-weight:
+        700;
+
+    transition:
+        0.2s;
+}
+
+
+.choice-button:hover {
+    color:
+        white;
+
+    background:
+        #d84d76;
+
+    border-color:
+        #d84d76;
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* CAFÉS */
+
+.cafe-container {
+    width:
+        100%;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap:
+        14px;
+
+    margin-top:
+        10px;
+}
+
+
+.cafe-card {
+    background:
+        #fff7f9;
+
+    border:
+        2px solid
+        #f1c5d0;
+
+    border-radius:
+        20px;
+
+    padding:
+        17px 13px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+}
+
+
+.cafe-card p {
+    color:
+        #765563;
+
+    font-size:
+        0.77rem;
+
+    line-height:
+        1.5;
+
+    min-height:
+        57px;
+}
+
+
+.cafe-card a {
+    color:
+        #c23f65;
+
+    font-size:
+        0.73rem;
+
+    font-weight:
+        700;
+
+    margin:
+        9px 0;
+
+    text-decoration:
+        none;
+}
+
+
+.cafe-card a:hover {
+    text-decoration:
+        underline;
+}
+
+
+.choose-cafe {
+    width:
+        100%;
+
+    border:
+        none;
+
+    border-radius:
+        30px;
+
+    padding:
+        10px 6px;
+
+    color:
+        white;
+
+    background:
+        #d84d76;
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        700;
+}
+
+
+/* FINAL PAGE */
+
+.final-layout {
+    width:
+        100%;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    align-items:
+        center;
+
+    gap:
+        22px;
+}
+
+
+.final-text {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+}
+
+
+.final-text h1 {
+    font-size:
+        clamp(
+            3rem,
+            5vw,
+            4.4rem
+        );
+}
+
+
+.date-summary {
+    width:
+        100%;
+
+    max-width:
+        400px;
+
+    background:
+        #fff0f4;
+
+    border:
+        1px solid
+        #f0c4d0;
+
+    border-radius:
+        20px;
+
+    padding:
+        14px;
+
+    margin:
+        10px 0;
+}
+
+
+.date-summary p {
+    color:
+        #764152;
+
+    margin:
+        6px 0;
+
+    font-size:
+        0.84rem;
+}
+
+
+.final-message {
+    color:
+        #73525e;
+
+    line-height:
+        1.55;
+
+    font-size:
+        0.82rem;
+
+    margin:
+        9px 0 15px;
+}
+
+
+.final-response {
+    color:
+        #c23f65;
+
+    font-weight:
+        700;
+
+    margin-top:
+        10px;
+}
+
+
+/* CUTE ANIME ILLUSTRATION */
+
+.anime-picture {
+    height:
+        480px;
+
+    border-radius:
+        25px;
+
+    overflow:
+        hidden;
+
+    position:
+        relative;
+
+    background:
+        linear-gradient(
+            180deg,
+            #26304a,
+            #a66d63 58%,
+            #f1c3a0 59%
+        );
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        flex-end;
+
+    align-items:
+        center;
+}
+
+
+.night-sky {
+    position:
+        absolute;
+
+    top:
+        18px;
+
+    font-size:
+        1.7rem;
+
+    letter-spacing:
+        20px;
+}
+
+
+.cafe-sign {
+    position:
+        absolute;
+
+    top:
+        75px;
+
+    right:
+        20px;
+
+    color:
+        #ffe9a8;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size:
+        2.2rem;
+
+    padding:
+        8px 13px;
+
+    border:
+        2px solid
+        #f7d37d;
+
+    border-radius:
+        10px;
+}
+
+
+.anime-couple {
+    width:
+        290px;
+
+    height:
+        350px;
+
+    position:
+        relative;
+}
+
+
+.anime-boy {
+    position:
+        absolute;
+
+    left:
+        55px;
+
+    bottom:
+        0;
+
+    width:
+        115px;
+
+    height:
+        310px;
+}
+
+
+.boy-head {
+    width:
+        78px;
+
+    height:
+        90px;
+
+    background:
+        #bc7c59;
+
+    border-radius:
+        45%;
+
+    margin:
+        auto;
+
+    border-top:
+        18px solid
+        #201c22;
+}
+
+
+.boy-body {
+    width:
+        115px;
+
+    height:
+        215px;
+
+    margin-top:
+        5px;
+
+    background:
+        #17171c;
+
+    border-radius:
+        30px
+        30px
+        8px
+        8px;
+}
+
+
+.anime-girl {
+    position:
+        absolute;
+
+    right:
+        12px;
+
+    bottom:
+        0;
+
+    width:
+        125px;
+
+    height:
+        285px;
+}
+
+
+.girl-head {
+    width:
+        74px;
+
+    height:
+        85px;
+
+    background:
+        #bd7e5d;
+
+    border-radius:
+        48%;
+
+    margin-left:
+        18px;
+
+    border-top:
+        22px solid
+        #292027;
+
+    transform:
+        rotate(-8deg);
+}
+
+
+.girl-dress {
+    width:
+        125px;
+
+    height:
+        180px;
+
+    margin-top:
+        5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #e9b83f,
+            #ffe07a,
+            #dca72d
+        );
+
+    clip-path:
+        polygon(
+            35% 0,
+            70% 0,
+            100% 100%,
+            0 100%
+        );
+
+    border-radius:
+        20px;
+}
+
+
+.girl-leg {
+    width:
+        80px;
+
+    height:
+        18px;
+
+    background:
+        #bd7e5d;
+
+    border-radius:
+        20px;
+
+    position:
+        absolute;
+
+    right:
+        -28px;
+
+    bottom:
+        30px;
+
+    transform:
+        rotate(-28deg);
+}
+
+
+.anime-picture p {
+    position:
+        absolute;
+
+    bottom:
+        12px;
+
+    color:
+        white;
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        600;
+
+    text-shadow:
+        0 2px 4px
+        rgba(
+            0,
+            0,
+            0,
+            0.5
+        );
+}
+
+
+/* FLOATING HEARTS */
+
+#heart-container {
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    overflow:
+        hidden;
+
+    pointer-events:
+        none;
+
+    z-index:
+        1;
+}
+
+
+.heart {
+    position:
+        absolute;
+
+    bottom:
+        -50px;
+
+    animation:
+        heartFloat
+        linear
+        forwards;
+
+    opacity:
+        0.6;
+}
+
+
+@keyframes heartFloat {
+
+    from {
+        transform:
+            translateY(0);
+    }
+
+    to {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity:
+            0;
+    }
 
 }
 
+
+/* MOBILE */
+
+@media
+(max-width: 700px) {
+
+    .card {
+        height:
+            calc(
+                100vh - 20px
+            );
+
+        padding:
+            18px;
+
+        border-radius:
+            25px;
+    }
+
+
+    .choice-container {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .cafe-container {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .cafe-card {
+        padding:
+            12px;
+    }
+
+
+    .cafe-card p {
+        min-height:
+            auto;
+    }
+
+
+    .final-layout {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .anime-picture {
+        display:
+            none;
+    }
+
+
+    .answer-buttons {
+        flex-direction:
+            column;
+
+        min-height:
+            160px;
+    }
+
+
+    h1 {
+        font-size:
+            3.1rem;
+    }
 
 }
