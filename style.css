@@ -10,14 +10,13 @@
 
 
 /* =================================
-   PAGE SETTINGS
+   PAGE
 ================================= */
 
 html,
 body {
     width: 100%;
     height: 100%;
-    overflow: hidden;
 }
 
 
@@ -40,14 +39,12 @@ body {
 
     padding: 12px;
 
-    position: fixed;
-
-    inset: 0;
+    overflow: hidden;
 }
 
 
 /* =================================
-   MAIN WEBSITE CARD
+   MAIN CARD
 ================================= */
 
 .card {
@@ -65,15 +62,6 @@ body {
             255,
             255,
             0.92
-        );
-
-    border:
-        2px solid
-        rgba(
-            255,
-            255,
-            255,
-            0.85
         );
 
     border-radius: 32px;
@@ -98,7 +86,7 @@ body {
 
 
 /* =================================
-   DIFFERENT SCREENS
+   SCREENS
 ================================= */
 
 .screen {
@@ -152,7 +140,7 @@ body {
 
 
 /* =================================
-   HEADINGS AND TEXT
+   TEXT
 ================================= */
 
 h1 {
@@ -220,7 +208,7 @@ h2 {
 
 
 /* =================================
-   TOP EMOJIS
+   EMOJI
 ================================= */
 
 .big-emoji {
@@ -251,7 +239,7 @@ h2 {
 
 
 /* =================================
-   MAIN BUTTON
+   BUTTONS
 ================================= */
 
 button {
@@ -304,7 +292,7 @@ button {
 
 
 /* =================================
-   YES AND NO BUTTONS
+   YES / NO
 ================================= */
 
 .answer-buttons {
@@ -360,7 +348,7 @@ button {
 
 
 /* =================================
-   DAY AND TIME CHOICES
+   DAY AND TIME
 ================================= */
 
 .choice-container {
@@ -398,8 +386,6 @@ button {
     font-size: 0.86rem;
 
     font-weight: 700;
-
-    transition: 0.2s;
 }
 
 
@@ -409,14 +395,11 @@ button {
     background: #d84d76;
 
     border-color: #d84d76;
-
-    transform:
-        translateY(-3px);
 }
 
 
 /* =================================
-   CAFÉ CARDS
+   CAFÉS
 ================================= */
 
 .cafe-container {
@@ -479,11 +462,6 @@ button {
 }
 
 
-.cafe-card a:hover {
-    text-decoration: underline;
-}
-
-
 .choose-cafe {
     width: 100%;
 
@@ -491,7 +469,7 @@ button {
 
     border-radius: 30px;
 
-    padding: 10px 6px;
+    padding: 10px;
 
     color: white;
 
@@ -507,19 +485,28 @@ button {
    FINAL PAGE
 ================================= */
 
+#final-screen {
+    justify-content: flex-start;
+
+    overflow-y: auto;
+
+    padding: 15px;
+}
+
+
 .final-layout {
     width: 100%;
-
-    height: 100%;
 
     display: grid;
 
     grid-template-columns:
         1fr 1fr;
 
-    align-items: center;
+    align-items: start;
 
     gap: 22px;
+
+    padding-bottom: 20px;
 }
 
 
@@ -529,6 +516,8 @@ button {
     flex-direction: column;
 
     align-items: center;
+
+    padding-top: 15px;
 }
 
 
@@ -591,21 +580,25 @@ button {
 
 
 /* =================================
-   FINAL ANIME IMAGE
+   FULL ANIME IMAGE
 ================================= */
 
 .anime-picture {
     width: 100%;
 
-    height: 480px;
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    background: #f4d5dc;
 
     border-radius: 25px;
 
-    overflow: hidden;
-
-    position: relative;
-
-    background: #f4d5dc;
+    padding: 10px;
 
     box-shadow:
         0 15px 35px
@@ -615,76 +608,57 @@ button {
             75,
             0.22
         );
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
 }
 
+
+/*
+   IMPORTANT:
+   No fixed height.
+   The complete image will
+   keep its original shape.
+*/
 
 .anime-image {
     width: 100%;
 
-    height: 100%;
+    height: auto;
+
+    max-height: none;
 
     display: block;
 
     object-fit: contain;
 
-    object-position: center;
-
-    background: #f4d5dc;
+    border-radius: 18px;
 }
 
 
-/* TEXT ON THE IMAGE */
+/* CAPTION BELOW IMAGE */
 
 .image-message {
-    position: absolute;
+    position: static;
 
-    left: 0;
-
-    right: 0;
-
-    bottom: 0;
+    width: 100%;
 
     padding:
-        35px
-        15px
-        16px;
+        10px
+        8px
+        3px;
 
-    background:
-        linear-gradient(
-            transparent,
-            rgba(
-                25,
-                10,
-                18,
-                0.82
-            )
-        );
+    background: transparent;
 }
 
 
 .image-message p {
-    color: white;
+    color: #87384f;
 
-    font-size: 0.82rem;
+    font-size: 0.8rem;
 
     font-weight: 600;
 
     text-align: center;
 
-    text-shadow:
-        0 2px 5px
-        rgba(
-            0,
-            0,
-            0,
-            0.7
-        );
+    text-shadow: none;
 }
 
 
@@ -738,16 +712,10 @@ button {
 
 
 /* =================================
-   MOBILE AND SMALL SCREENS
+   MOBILE
 ================================= */
 
 @media (max-width: 700px) {
-
-    html,
-    body {
-        overflow: hidden;
-    }
-
 
     body {
         padding: 8px;
@@ -769,8 +737,7 @@ button {
 
 
     .screen {
-        justify-content:
-            flex-start;
+        justify-content: flex-start;
 
         padding:
             15px
@@ -811,8 +778,6 @@ button {
     }
 
 
-    /* DAY AND TIME */
-
     .choice-container {
         grid-template-columns:
             1fr;
@@ -820,13 +785,6 @@ button {
         max-width: 300px;
     }
 
-
-    .choice-button {
-        padding: 12px;
-    }
-
-
-    /* CAFÉ CARDS */
 
     .cafe-container {
         grid-template-columns:
@@ -838,17 +796,10 @@ button {
     }
 
 
-    .cafe-card {
-        padding: 12px;
-    }
-
-
     .cafe-card p {
         min-height: auto;
     }
 
-
-    /* YES AND NO */
 
     .answer-buttons {
         flex-direction: column;
@@ -859,15 +810,23 @@ button {
     }
 
 
-    /* FINAL PAGE */
+    /* FINAL SCREEN */
+
+    #final-screen {
+        padding: 10px 3px;
+    }
+
 
     .final-layout {
-        height: auto;
-
         grid-template-columns:
             1fr;
 
         gap: 15px;
+    }
+
+
+    .final-text {
+        padding-top: 5px;
     }
 
 
@@ -878,58 +837,33 @@ button {
 
     .final-message {
         font-size: 0.76rem;
-
-        margin:
-            7px
-            0
-            10px;
     }
 
 
-    .date-summary {
-        padding: 10px;
-
-        margin: 5px 0;
-    }
-
-
-    .date-summary p {
-        font-size: 0.76rem;
-    }
-
-
-    /* FULL IMAGE ON MOBILE */
+    /*
+       Full image remains visible.
+       It scales naturally.
+    */
 
     .anime-picture {
-        display: flex;
-
         width: 100%;
 
-        height: 310px;
+        height: auto;
 
-        margin-top: 5px;
+        padding: 7px;
 
         border-radius: 20px;
-
-        justify-content: center;
-
-        align-items: center;
     }
 
 
     .anime-image {
         width: 100%;
 
-        height: 100%;
+        height: auto;
 
         object-fit: contain;
 
-        object-position: center;
-    }
-
-
-    .image-message p {
-        font-size: 0.72rem;
+        border-radius: 15px;
     }
 
 }
